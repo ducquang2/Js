@@ -1,7 +1,7 @@
 function tachchu(x, y) {
     var tach = x.split(' ')
-    var i = 0, tong = 0;
-    while (i < x.length) {
+    for (var i = 0; i < x.length; i++) {
+        let tong = 0;
         if (tong <= 100) {
             tong += tach[i].length;
         } else break;
