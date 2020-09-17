@@ -6,11 +6,10 @@ function tachchu(x, y) {
     for (var i = 0; i < x.length; i++) {
         if (num <= y) {
             num += tach[i].length;
+            result += ' ' + tach[i];
         }
-        else break
-    for (var j = 0; j < i; j++) {
-            result = result + ' ' + tach[j];
-        } return result + '...';
+        else break;
+     return result + '...';
 
     }
 }
