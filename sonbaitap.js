@@ -1,12 +1,10 @@
 function tachchu(x, y) {
-    console.log('ff')
-    var tach = x.split(' ');
-    var result = '';
-    console.log(tach[0].length);
-    while (tach[0].length >= y) {
-        result = tach[0];
-        break;
-    } return result;
-}    
-console.log('Hello');
+    var tach = x.split(' ')
+    var i = 0, tong = 0;
+    while (i < x.length) {
+        if (tong <= 100) {
+            tong += tach[i].length;
+        } else break;
+}
+}
 tachchu('aaaaaa aaa aaa', 6 );
