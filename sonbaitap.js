@@ -4,12 +4,13 @@ function tachchu(x, y) {
     var num = 0;
 
     for (var i = 0; i < x.length; i++) {
+        if (x.length > y) {
         if (num <= y) {
             num += tach[i].length;
             result += ' ' + tach[i];
         }
         else break;
-     return result + '...';
-
+     return result + '...';}
+        else return result = x;
     }
 }
