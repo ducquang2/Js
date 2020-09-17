@@ -12,4 +12,5 @@ function tachchu(x, y) {
             result = result + ' ' + tach[j];
         } return result + '...';
 
+    }
 }
