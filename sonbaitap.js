@@ -3,20 +3,18 @@ function tachchu(x, y) {
     var result = '';
     var num = 0;
     var sub = '';
-
-    for (var i = 0; i < x.length; i++) {
-        if (x.length > y) {
-        if (num <= y) {
-            num += tach[i].length;
-            result += ' ' + tach[i];
+    if (x.length > y) {
+        while (num < y) {
+            result += x[num] ;
+            num ++;
         }
-        else break;
-        for (let j = result.length; j< x.length; j++) {
-        if (x[j] === ' ') {
+    for (let i = result.length; i < x.length; i++) {
+        if (x[i] === " ") {
             break;
-        } sub += x[j];
         }
-        return result + ' ' + sub + '...';}
-        else return result = x;
+            sub += x[i];
     }
+        return result + sub + '...';
+    }
+    else return result = x;
 }
