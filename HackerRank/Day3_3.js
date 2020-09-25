@@ -1,3 +1,5 @@
 function isPositive(nums) {
-    if (nums > 0) {}
+    if (nums > 0) {
+        return 'YES';
+    }
 }
