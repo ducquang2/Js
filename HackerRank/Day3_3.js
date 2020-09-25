@@ -2,6 +2,6 @@ function isPositive(nums) {
     if (nums > 0) {
         return 'YES';
     } else {
-        throw
+        throw (a === 0 ? new Error('Zero Error') : new Error('Negative Error'));   
     }
 }
