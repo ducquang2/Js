@@ -1,1 +1,3 @@
-function isPositive(nums)
+function isPositive(nums) {
+    if (nums > 0) {}
+}
