@@ -4,4 +4,6 @@ function modifyArray(nums) {
             return n * 2;
         } else return n * 3;
     } 
+    var newArray = nums.map(something);
+    return newArray;
 }
