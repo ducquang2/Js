@@ -7,9 +7,11 @@ function modifyArray(nums) {
         } return result;
     }
     const odd = () => {
-
+        for (var i = 0; i < n; i++) {
+            result.push(nums[i] * 3)
+        } return result;
     }
     if (n % 2 == 0) {
-
-    }
+        even;
+    } else odd
 }
