@@ -5,5 +5,5 @@ class Rectangle {
     }
 }
 Rectangle.prototype.area = function() {
-
+    return this.w * this.h;
 }
