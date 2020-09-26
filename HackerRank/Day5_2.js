@@ -23,5 +23,5 @@ function readLine() {
 }
 
 function sides(literals, ...expressions) {
-    
+    const [a, p] = expressions;
 }
