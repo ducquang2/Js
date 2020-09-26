@@ -24,4 +24,6 @@ function readLine() {
 
 function sides(literals, ...expressions) {
     const [a, p] = expressions;
+    const root = Math.sqrt((p*p) - (16*a));
+
 }
