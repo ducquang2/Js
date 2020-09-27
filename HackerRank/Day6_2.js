@@ -1,0 +1,3 @@
+function getDayName(dateString) {
+    
+}
