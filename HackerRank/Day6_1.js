@@ -9,4 +9,5 @@ function getMaxLessThanK(n, k) {
             }
         }
     }
+    return max;
 }
