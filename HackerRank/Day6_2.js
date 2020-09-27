@@ -8,5 +8,11 @@ function getDayName(dateString) {
             dayName = 'Monday';
             break;
         case 'Tue':
+            dayName = 'Tuesday';
+            break;
+        case 'Wed':
+            dayName = 'Wednesday';
+            break;
+        
     }
 }
