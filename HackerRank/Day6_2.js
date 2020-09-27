@@ -22,4 +22,5 @@ function getDayName(dateString) {
             dayName = 'Saturday';
             break;
     }
+    return dayName;
 }
