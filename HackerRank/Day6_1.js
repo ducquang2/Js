@@ -1,3 +1,3 @@
-function getMaxlessthanK (n, k) {
+var getMaxlessthanK = function(n, k) {
     
 }
