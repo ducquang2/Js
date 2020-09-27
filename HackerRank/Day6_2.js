@@ -17,6 +17,9 @@ function getDayName(dateString) {
             dayName = 'Thursday';
             break;
         case 'Fri':
-            dayName
+            dayName = 'Friday';
+        case 'Sat':
+            dayName = 'Saturday';
+            break;
     }
 }
