@@ -1,0 +1,3 @@
+function telephoneCheck(str) {
+    
+}
