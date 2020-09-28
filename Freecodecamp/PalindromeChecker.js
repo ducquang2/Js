@@ -5,6 +5,7 @@ function palindrome(str) {
         .replace(/[\W_]/g, '')
         .toLowerCase()
         .split()
+        .reverse()
     ) 
   
   }
