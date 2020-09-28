@@ -6,7 +6,7 @@ function palindrome(str) {
         .toLowerCase()
         .split()
         .reverse()
-        .join()
+        .join('')
     ) 
   
   }
