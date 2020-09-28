@@ -7,13 +7,13 @@ function rot13(str) {
         for(var i = 0; i < arr.length; i++) {
             for (var j = 0; j < abc.length; j ++) {
                 if (arr[i] === abc[j]) {
-                    arr[i] = nop [j];
+                    arr[i] = nop[j];
                 } else if (arr[i] === nop[j]) {
-                    
+                    arr[i] = abc[j];
                 }
             }
         }
-    return str;
+    return arr.join('');
   }
   
   rot13("SERR PBQR PNZC");
