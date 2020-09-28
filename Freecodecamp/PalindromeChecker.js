@@ -1,7 +1,8 @@
 function palindrome(str) {
-    return {
+    return (
+      str.replace(/[\W_]/g, '').toLowerCase() ===
       str
-    } 
+    ) 
   
   }
   
