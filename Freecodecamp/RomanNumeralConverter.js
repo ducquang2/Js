@@ -16,6 +16,7 @@ function convertToRoman(num) {
         "I"
       ];
     
+      var romanized = '';
 }
    
    convertToRoman(36);
