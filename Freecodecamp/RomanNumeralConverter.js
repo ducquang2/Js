@@ -24,6 +24,7 @@ function convertToRoman(num) {
               num -= nums[i];
           }
       }
+      return romanized;
 }
    
    convertToRoman(36);
