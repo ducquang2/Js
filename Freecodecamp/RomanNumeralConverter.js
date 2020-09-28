@@ -19,7 +19,10 @@ function convertToRoman(num) {
       var romanized = '';
 
       for (var i = 0; i < nums.length; i++) {
-          
+          while (nums[i] <= num) {
+              romanized += romans[i];
+              num -= nums[i];
+          }
       }
 }
    
