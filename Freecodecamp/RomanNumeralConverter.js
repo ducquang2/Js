@@ -17,6 +17,10 @@ function convertToRoman(num) {
       ];
     
       var romanized = '';
+
+      for (var i = 0; i < nums.length; i++) {
+          
+      }
 }
    
    convertToRoman(36);
