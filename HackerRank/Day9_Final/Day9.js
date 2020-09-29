@@ -1,49 +1,82 @@
-var resultDiv = document.createElement('div');
-resultDiv.id = 'res';
-resultDiv.addEventListener('click', buttonClick);
-document.body.appendChild(resulDiv);
-
-var buttonDiv = document.createElement('div');
-buttonDiv.id = 'btns'
-document.body.appendChild(buttonDiv);
-
-var ids = ['btn0', 'btn1', 'btnClr', 'btnEql', 'btnSum', 'btnSub', 'btnMul','btnDiv'];
-var innerHTMLs = ['0', '1', 'C', '=', '+', '-', '*', '/'];
-var styles = ['biButton', 'biButton', 'utiButton', 'utiButton', 'operButton', 'operButton', 'operButton', 'operButton'];
-
-for (var i = 0; i < ids.length; i++) {
-    var button = document.createElement('button');
-    button.id = ids[i];
-    button.innerHTML = innerHTMLs[i];
-    button.className = 'button' + styles[i];
-    button.addEventListener('click', buttonClick);
-    buttonDiv.appendChild(button);
-}
-
-var operator = '';
-
-function buttonClick(e) {
-    var button = e.target || e.srcElement;
-
-    if (button.id == 'btnClr') {
-        ope = '';
-        resultDiv.innerHTML = '';
+let elem = document.getElementById("res");
+  
+  function checkOperator(){
+    if(elem.innerHTML.endsWith('+') || elem.innerHTML.endsWith('-') || elem.innerHTML.endsWith('*') || elem.innerHTML.endsWith('/')){
+      return true;
     }
-    else if (button.id != 'btnEql') {
-        if (button.id != 'btn0' && button.id != 'btn1') {
-            if (operator != '') {
-                evaluate();
-            }
-            operator = button.innerHTML;
-        }
-        resultDiv.innerHTML += button.innerHTML;
+  }
+  
+  function clickZero() {
+    elem.innerHTML +='0';
+  }
+  
+  function clickOne() {
+    elem.innerHTML +='1';
+  }
+  
+  function clickSum() {
+    if(elem.innerHTML.length!=0 && !checkOperator()){
+        elem.innerHTML +='+';
+       }
+  }  
+  
+  function clickSub() {
+    if(elem.innerHTML.length!=0 && !checkOperator()){
+        elem.innerHTML +='-';
+       }
+  }
+
+  function clickMul() {
+    if(elem.innerHTML.length!=0 && !checkOperator()){
+        elem.innerHTML +="*";
+       }
+  }
+
+  function clickDiv() {
+    if(elem.innerHTML.length!=0 && !checkOperator()){
+        elem.innerHTML +="/";
+      }
+  }
+
+  function clickClr() {
+    elem.innerHTML = '';
+  }
+
+  function clickEql() {
+    if(!checkOperator()) {
+      let re = /\d+/g
+      let re2 = /[\+\-\*\/]+/g
+      let numbers = elem.innerHTML.match(re);
+      let operations = elem.innerHTML.match(re2);
+      while(operations.length>0) {
+        if(operations.includes('*')) {
+          let indexOfMul = operations.indexOf('*');
+          let mul = ( indexOfMul!=0 ? parseInt(numbers[indexOfMul-1],2) : parseInt(numbers[indexOfMul],2) ) * parseInt(numbers[indexOfMul+1],2);
+          numbers.splice(indexOfMul,2);
+          numbers.splice(indexOfMul,0,mul.toString(2));
+          operations.splice(indexOfMul,1);
+        } else if (operations.includes('/')) {
+          let indexOfDiv = operations.indexOf('/');
+          let division = ( indexOfDiv!=0 ? parseInt(numbers[indexOfDiv-1],2) : parseInt(numbers[indexOfDiv],2) ) / parseInt(numbers[indexOfDiv+1],2);
+          numbers.splice(indexOfDiv,2);
+          numbers.splice(indexOfDiv,0,division.toString(2));
+          operations.splice(indexOfDiv,1);
+        } else if (operations.includes('+')) {
+          let indexOfSum = operations.indexOf('+');
+          let sum = ( indexOfSum!=0 ? parseInt(numbers[indexOfSum-1],2) : parseInt(numbers[indexOfSum],2) ) + parseInt(numbers[indexOfSum+1],2);
+          numbers.splice(indexOfSum,2);
+          numbers.splice(indexOfSum,0,sum.toString(2));
+          operations.splice(indexOfSum,1);
+        } else {
+          let indexOfSub = operations.indexOf('-');
+          let sub = ( indexOfSub!=0 ? parseInt(numbers[indexOfSub-1],2) : parseInt(numbers[indexOfSub],2) )- parseInt(numbers[indexOfSub+1],2);
+          numbers.splice(indexOfSub,2);
+          numbers.splice(indexOfSub,0,sub.toString(2));
+          operations.splice(indexOfSub,1);
+        }  
+      }
+      elem.innerHTML = numbers[0].toString(2);
     } else {
-        evaluate();
+      alert("Line must ends with number.")
     }
-}
-
-function evaluate() {
-    var operand = resultDiv.innerHTML.split(operator)
-    resultDiv.innerHTML = (Math.floor(eval(parseInt(operand[0], 2)) + operator + parseInt(operand[1], 2) )).toString(2)
-    operator = ''
-}
+  }
