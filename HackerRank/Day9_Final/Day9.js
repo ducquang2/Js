@@ -20,7 +20,7 @@ for (var i = 0; i < ids.length; i++) {
     buttonDiv.appendChild(button);
 }
 
-var opr = '';
+var operator = '';
 
 function buttonClick(e) {
     var button = e.target || e.srcElement;
@@ -43,5 +43,7 @@ function buttonClick(e) {
 }
 
 function evaluate() {
-    var operand = resultDiv
+    var operand = resultDiv.innerHTML.split(operator)
+    resultDiv.innerHTML = (Math.floor(eval(parseInt(operand[0], 2)) + operator + parseInt(operand[1], 2) )).toString(2)
+    operator = ''
 }
