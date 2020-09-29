@@ -1,6 +1,6 @@
-var resulDiv = document.createElement('div');
+var resultDiv = document.createElement('div');
 resultDiv.id = 'res';
-resulDiv.addEventListener('click', buttonClick);
+resultDiv.addEventListener('click', buttonClick);
 document.body.appendChild(resulDiv);
 
 var buttonDiv = document.createElement('div');
@@ -26,6 +26,22 @@ function buttonClick(e) {
     var button = e.target || e.srcElement;
 
     if (button.id == 'btnClr') {
-        op
+        ope = '';
+        resultDiv.innerHTML = '';
     }
+    else if (button.id != 'btnEql') {
+        if (button.id != 'btn0' && button.id != 'btn1') {
+            if (operator != '') {
+                evaluate();
+            }
+            operator = button.innerHTML;
+        }
+        resultDiv.innerHTML += button.innerHTML;
+    } else {
+        evaluate();
+    }
+}
+
+function evaluate() {
+    var operand = resultDiv
 }
