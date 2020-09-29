@@ -1,0 +1,17 @@
+body {
+    width: 33%
+}
+#res {
+    background-color: lightgray;
+    border: solid;
+    height: 48px;
+    font-size: 20px;
+}
+#btns > .binaryButton {
+    background-color: lightgreen;
+    color: brown;
+}
+#btns > .operatorButton {
+    background-color: black;
+    color: red;
+}
