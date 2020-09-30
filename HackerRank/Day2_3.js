@@ -5,8 +5,7 @@ function vowelsAndConsonants(s) {
     for (var i = 0; i < s.length; i++) {
         if (regex.includes(s[i])) {
              console.log(s[i]);
-        }
-        else {
+        } else {
            consonants += s[i] + '\n';
         }
     }
