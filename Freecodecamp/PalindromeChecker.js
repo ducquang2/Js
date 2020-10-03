@@ -8,7 +8,4 @@ function palindrome(str) {
         .reverse()
         .join('')
     ) 
-  
   }
-  
-  
