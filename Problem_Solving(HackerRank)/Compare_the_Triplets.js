@@ -9,4 +9,5 @@ function compareTriplets(a, b) {
             points[1]++;
         }
     }
+    
 }
