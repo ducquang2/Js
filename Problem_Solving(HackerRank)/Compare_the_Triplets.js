@@ -6,7 +6,7 @@ function compareTriplets(a, b) {
         }
         //because else in this line mean b[i] <= a[i], then we need != 
         else if (a[i] != b[i]) {
-            points[1]++
+            points[1]++;
         }
     }
 }
