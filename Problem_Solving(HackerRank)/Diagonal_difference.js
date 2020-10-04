@@ -6,4 +6,3 @@ function diagonalDifference(arr) {
     }  
     return Math.abs(lr-rl);
 }
-
