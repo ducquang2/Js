@@ -1,3 +1,3 @@
 function averyBigSum(ar) {
-    return ar.reduce((a,b) => a + b)
+    return ar.reduce((a,b) => a + b, 0)
 }
