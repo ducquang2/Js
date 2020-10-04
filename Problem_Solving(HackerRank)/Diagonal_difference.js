@@ -4,6 +4,6 @@ function diagonalDifference(arr) {
         lr += arr[i][i];
         rl += arr[i][n-i-1];
     }  
-    
+    return Math.abs(lr-rl);
 }
 
