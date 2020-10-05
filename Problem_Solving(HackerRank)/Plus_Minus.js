@@ -1,16 +1,16 @@
 function plusMinus(arr) {
-    var pos = 0, neg = 0, zero = 0;
-    for (var i = 0; i < arr.length; i++) {
-        switch (arr[i]) {
-            case arr[i] > 0:
-                pos++;
-                break;
-            case arr[i] < 0:
-                neg++;
-                break;
-            default: 
-                zero++;
-        }
-        return ( pos/arr.length , neg/arr.length , zero/arr.length );
-    }
+    let pos = 0;
+    let neg = 0;
+    let zero = 0;
+    arr.forEach(e => {
+        if (e > 0)
+            pos++;
+        else if (e < 0)
+            neg++;
+        else if (e == 0)
+            zero++;
+    });
+    console.log(pos / arr.length);
+    console.log(neg / arr.length);
+    console.log(zero / arr.length);
 }
