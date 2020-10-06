@@ -1,11 +1,8 @@
 function getSecondLargest(nums) {
-    var first = 0;
-    var second = 0;
+    var first = Math.max(nums);
+    var second = Math.min(nums);
     for (let i = 0; i < nums.length; i++) {
-        if (nums[i] > first) {
-            second = first;
-            first = nums[i];
-        } else if (nums[i] > second && nums[i] < first) {
+        if (nums[i] > second && nums[i] < first) {
             second = nums[i];
         }
     } return second;
